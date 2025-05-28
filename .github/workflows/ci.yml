@@ -23,6 +23,13 @@ jobs:
     - name: Ejecutar pruebas unitarias con cobertura
       run: npm test
 
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage/lcov.info
+        fail_ci_if_error: true
+
   docker:
     needs: test
     runs-on: ubuntu-latest
