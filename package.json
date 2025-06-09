@@ -1,1 +1,16 @@
-{"name":"dockernevarez","version":"1.0.0","main":"index.js","scripts":{"start":"node index.js","test":"jest --coverage"},"devDependencies":{"jest":"^29.0.0"},"dependencies":{"express":"^5.1.0"}}
+{
+    "name": "dockernevarez",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest --coverage",
+        "coverage": "jest --coverage"
+    },
+    "devDependencies": {
+        "jest": "^29.0.0"
+    },
+    "dependencies": {
+        "express": "^5.1.0"
+    }
+}
