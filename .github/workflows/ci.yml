@@ -41,8 +41,9 @@ jobs:
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    - name: Build Docker image
-      run: docker build -t alxa7f/dockernevarez .
-
-    - name: Push Docker image
-      run: docker push alxa7f/dockernevarez
+    - name: Bake and push image
+      uses: docker/bake-action@v3
+      with:
+        files: docker-bake.hcl
+        targets: app
+        push: true
